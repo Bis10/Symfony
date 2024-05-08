@@ -11,7 +11,7 @@ class NameVariationController extends AbstractController{
 
     #[Route('/', name:'name_variation')]
     public function index(Request $request){
-      $name = $request->query->get('name', '');
+      $name = $request->query->get('name');
       $nameDetails = [];
 
       if(!empty($name)){
