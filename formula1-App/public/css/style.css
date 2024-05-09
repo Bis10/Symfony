@@ -1,0 +1,48 @@
+* {
+    background-color: gray;
+}
+
+body {
+    margin: 20px;
+}
+
+h1 {
+    color: rgb(213, 92, 70);
+    font-size: 36px;
+    /* margin: 20px; */
+}
+h3{
+    font-size: 26px;
+    /* text-transform: capitalize; */
+}
+
+.race-item {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.race-info {
+    margin-left: 20px;
+    padding: 20px;
+    flex: 1;
+}
+a {
+    text-decoration: none;
+    color: brown;
+}
+p{
+    font-size: 24px;
+
+}
+
+.img-container {
+    margin-right: 40px;
+    
+}
+
+
+img {
+    width: 500px;
+    height: 300px;
+}

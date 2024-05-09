@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formula 1 races in 2024{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+{% endblock %}
+
+{% block body %}
+
+<h1>F1 Races in 2024 </h1>
+{% for data in data.MRData.RaceTable.Races %}
+    <div class="race-item">
+        <div class="race-info">
+            <h3><a href="{{ data.url|e }}">{{ data.raceName|e }}</a></h3>
+            <p style="text-transform: capitalize;">Circuit: {{ data.Circuit.circuitId|e }}</p>
+            <p>Location: {{ data.Circuit.Location.locality|e }}, Country: {{ data.Circuit.Location.country|e }}</p>
+            <p>Date: {{ data.date|e }}</p>
+        </div>
+        <div class="img-container">
+            <img src="https://source.unsplash.com/400x300/?formula-one,{{ data.Circuit.Location.country|e }}" alt="Formula 1 Image">
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
