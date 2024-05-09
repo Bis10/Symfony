@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Palindrome App{% endblock %}
+
+{% block body %}
+<style>
+
+body {
+    background-color:skyblue;
+}
+    .container { margin: 2em auto; padding: 2em; max-width: 800px; width: 95%; font-size: 18px; sans-serif;}
+    .is-palindrome {color: green;}
+    .not-palindrome {color: red;}
+</style>
+
+<div class="container">
+   <a href= '{{ path ('app_palindrome') }}'></a>
+        <h1>Palindrome Checker: Check it</h1>
+        <form action = "" method="GET">
+            <label for="string">Enter a string:</label>
+            <input type="text" id="string" name="string" value="{{ string }}" required>
+            <button type="submit">Check Palindrome</button>
+        </form>
+  
+  
+   {% if isPalindrome %}
+        <p class="is-palindrome">{{string }} is a Palindrome.</p>
+   {% else %}
+       <p class="not-palindrome">{{ string }} is not a Palindrome.</p>
+   {% endif %}
+</div>
+{% endblock %}
+
