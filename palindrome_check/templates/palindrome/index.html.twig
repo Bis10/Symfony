@@ -4,13 +4,12 @@
 
 {% block body %}
 <style>
-
 body {
-    background-color:skyblue;
+    background-color: skyblue;
 }
-    .container { margin: 2em auto; padding: 2em; max-width: 800px; width: 95%; font-size: 18px; sans-serif;}
-    .is-palindrome {color: green; font-style: italic; }
-    .not-palindrome {color: red; font-style: italic;}
+.container { margin: 2em auto; padding: 2em; max-width: 800px; width: 95%; font-size: 18px; sans-serif;}
+.is-palindrome {color: green; font-style: italic; }
+.not-palindrome {color: red; font-style: italic;}
 </style>
 
 <div class="container">
@@ -22,12 +21,12 @@ body {
             <button type="submit">Check Palindrome</button>
         </form>
   
-  
-   {% if isPalindrome %}
-        <p class="is-palindrome">{{string }} is a Palindrome.</p>
-   {% else %}
-       <p class="not-palindrome">{{ string }} is not a Palindrome.</p>
+   {% if string is not empty %}
+       {% if isPalindrome %}
+            <p class="is-palindrome">{{ string }} is a Palindrome.</p>
+       {% else %}
+            <p class="not-palindrome">{{ string }} is not a Palindrome.</p>
+       {% endif %}
    {% endif %}
 </div>
 {% endblock %}
-
