@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %} About {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="../css/homestyle.css" type="text/css">
+{% endblock %}
+
+{% block body %}
+<main class="container">
+  <div>
+ <a href="{{ path ('home')}} " class="label">Home</a>
+ <a href="{{ path ('about')}} "  class="label">About</a>
+  </div>
+  {% if app.request.attributes.get('_route') == 'home' %}
+    <div>
+      <h1>Welcome to the Home Page!</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac diam vel massa vehicula lobortis. Proin ac condimentum nisi. Vivamus rutrum ex non velit aliquam, in dictum sem consequat. Quisque vitae ligula eu elit venenatis
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac diam vel massa vehicula lobortis. Proin ac condimentum nisi. Vivamus rutrum ex non velit aliquam, in dictum sem consequat. Quisque vitae ligula eu elit venenatis
+</p>
+    </div>
+  {% endif %}
+
+ 
+{% endblock %}

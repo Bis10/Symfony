@@ -1,0 +1,46 @@
+:root {
+    --skyblue: rgb(191, 228, 243);
+    --black: #000;
+    --red: rgb(249, 165, 165);
+    --crimson: rgb(245, 99, 128);
+    --purple: rgb(240, 136, 240);
+    --blue: rgb(106, 85, 241);
+}
+  
+  body {
+    background-color: var(--blue);
+    margin: 10px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color:var(--crimson) ;
+  }
+  
+  p {
+    line-height: 30px;
+    font-size: 20px;
+    color: rgb(36, 27, 38);
+  }
+  
+  a {
+    color: var(--red);
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  
+  
+  
