@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+ import Swal from "sweetalert2";
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -18,28 +21,38 @@ const ProjectList = () => {
   }, []);
 
   const handleEdit = (projectId) => {
-    // Logic to handle edit
-
-    console.log("Edit project with id:", projectId);
+    navigate(`/edit-project/${projectId}`);
   };
 
-  
-    // Logic to handle delete
-    const handleDelete = (projectId) => {
-
-        if(window.confirm('Are you sure you want to delete?')){
-            axios
-            .delete(`http://localhost:8007/api/projects/${projectId}`)
-            .then(() => {
-        setProjects(projects.filter((project) => project.id !== projectId));
-        })
-        .catch((error)=>{
-            console.log('Error:', error);
-        });
-    }
-    console.log('Delete project with id:', projectId);
-};
-  
+ 
+  // Logic to handle delete
+  const handleDelete = (projectId) => {
+    Swal.fire({
+      title: "Do you want to delete?",
+      showDenyButton: true,
+      confirmButtonText: "Delete",
+      denyButtonText: `Don't Delete`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`http://localhost:8007/api/projects/${projectId}`)
+          .then(() => {
+            setProjects(projects.filter((project) => project.id !== projectId));
+            Swal.fire("Deleted!", "Your project has been deleted.", "success");
+          })
+          .catch((error) => {
+            console.log("Error:", error);
+            Swal.fire(
+              "Error",
+              "An error occurred while deleting the project.",
+              "error"
+            );
+          });
+      } else if (result.isDenied) {
+        Swal.fire("Cancelled", "Your project is safe :)", "info");
+      }
+    });
+  };
 
   return (
     <div>
