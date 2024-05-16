@@ -1,0 +1,59 @@
+/* public/css/styles.css */
+
+/* Style the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Style table headings */
+.table th, .table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Style table rows */
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style links */
+p {
+    color: blue;
+    text-decoration: none;
+}
+
+p:hover {
+    text-decoration: underline;
+}
+
+/* Style buttons */
+button {
+    padding: 6px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    text-transform: capitalize;
+}
+ a {
+    text-decoration: none;
+    color: #fff;
+     margin: 8px;
+    
+ }
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the create new link */
+#create-new-link {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: green;
+}
+
